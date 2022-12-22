@@ -1,15 +1,14 @@
-#JVSy
-Open source JVS to PC interface using a Teensy
+#AnalogJVSy
+Open source JVS to PC interface using a Teensy 
 
 ##Description
-JVSy lets you connect your JVS controls (digital joystick and buttons for now, analog and lightguns are WIP) to your PC and use them as controls, for MAME or other purposes. 
+AnalogJVSy lets you connect your JVS analog controls (analog joystick and buttons plus 6 outputs) to your PC and use them as controls, for MAME or other purposes. 
+AnalogJVSy is base on JVSy project from K4roshi
 
 In its current state it's basically an open source JVS-PAC clone.
 
-It's currently a work in progress and tested only with digital inputs on a Naomi Universal cabinet.
-
 ###Tech description
-JVSy is an implementation of a JVS I/O host using a teensy 2.0 and an RS-485 to serial interface. The signals read from the other nodes are then converted to standard HID Joystick and keyboard signals.
+AnalogJVSy is an implementation of a JVS I/O host using a teensy 2.0 and an RS-485 to serial interface. The signals read from the other nodes are then converted to standard HID Joystick signals.
 
 
 ##Hardware
@@ -38,33 +37,21 @@ When built, connect the usb cable that comes from your sega i/o board to the usb
 ##Buttons setup
 Controls for both player one and two and report as a single HID device.
 
-- Joystick 1 is mapped to X and Y axes.
-- Joystick 2 is mapped to Z and Za axes
-- Buttons are mapped to the corresponding joystick button
-- P1 and P2 start are mapped to keyboard '1' and '2'
+- Analog 1 input is mapped to Joystick 1 X axe.
+- Analog 2 input is mapped to Joystick 1 Y axe.
+- Input switchs are mapped to the corresponding joystick buttons
+- Output 1-6 coukd be controled with the serial line 115Kbps. Syntax is <OutputPort>;<value>x with
+    <OutputPort>: 1 to 6 ; use 0 to address all ports
+    <value>: 0 or 1 ; use the decimal value to set all ports ne shot (ie 252 set the 6 outputs ON)
+    Examples:
+        1;1x      ;turn ON output 1 (pin49)
+        2;0x      ;turn OFF output 2 (pin50)
+        0;252x    ;turn ON outputs 1, 2, 3, 4, 5 and 6 outputs
 
-P1 start acts as shift button, when pressed simultaneously these keys are pressed instead of the default buttons:
-
-- P1 button 1: coin (presses keyboard 5)
-- J1 right: Tab
-- J1 down: P (pause)
-- J1 left: enter
-- P2: esc
-
-Ask for other shift modes, if you need them. I'll see what i can do.
-
-##Known Limitations
-Doesn't work with analog controls or lightguns, as I don't have any of those to test it with. If you're willing to help, just send me a message.
-
-##TODO
-- analog controls are being tested
-- draw schematics
-- multi nodes
-- gun controls
 
 ##Thanks
-invzim, creator of JVS-PAC, for the inspiration.
-
+k4roshi
+      
 @roysmeding for the wonderful reverse engineering done for Open JVS (https://github.com/TheOnlyJoey/openjvs) and the helpful attitude.
 
 ##License
