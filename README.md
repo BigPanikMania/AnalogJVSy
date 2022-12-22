@@ -40,13 +40,13 @@ Controls for both player one and two and report as a single HID device.
 - Analog 1 input is mapped to Joystick 1 X axe.
 - Analog 2 input is mapped to Joystick 1 Y axe.
 - Input switchs are mapped to the corresponding joystick buttons
-- Output 1-6 coukd be controled with the serial line 115Kbps. Syntax is <OutputPort>;<value>x with
-    <OutputPort>: 1 to 6 ; use 0 to address all ports
-    <value>: 0 or 1 ; use the decimal value to set all ports ne shot (ie 252 set the 6 outputs ON)
-    Examples:
-        1;1x      ;turn ON output 1 (pin49)
-        2;0x      ;turn OFF output 2 (pin50)
-        0;252x    ;turn ON outputs 1, 2, 3, 4, 5 and 6 outputs
+- Outputs 1-6 could be controled with the serial line (115Kbps). Syntax is <strong>\<OutputPort\>;\<value\>x</strong> with
+    - \<OutputPort\>: 1 to 6 ; use 0 to address all ports
+    - \<value\>: 0 or 1 ; use the decimal value to set all ports ne shot (ie 252 set the 6 outputs ON)
+    - Examples:
+        - 1;1x      ;turn ON output 1 (pin51)
+        - 2;0x      ;turn OFF output 2 (pin52)
+        - 0;252x    ;turn ON outputs 1, 2, 3, 4, 5 and 6 outputs
 
 
 ##Thanks
