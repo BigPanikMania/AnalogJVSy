@@ -50,7 +50,8 @@ Controls for both player one and two and report as a single HID device.
 
 |     Bit 7     |     Bit 6    |    Bit 5   |  Bit 4     |    Bit 3     |      Bit 2     |  Bit 1   |     Bit 0    |
 | :------------:  | :-------------: | :-------------: |:------------:  | :-------------: | :-------------: |:------------:  | :-------------: |
-|   Output 1.1  |  Output 1.2     |      Output 1.3     |   Output 2.1  |  Output 2.2     |      Output 2.3     |   x  |  x     |      
+|    Output 1  |    Output 2     |     Output 3      |    Output 4   |   Output 5     |     Output 6      |   x  |  x     |  
+|   Output 1.1  |  Output 1.2     |      Output 1.3     |   Output 2.1  |  Output 2.2     |      Output 2.3     |   x  |  x     |  
 | pin 51   |   pin 53    |      pin 55 | pin 52   |   pin 54    |      pin 56 |  x    |   x    |
 
 
