@@ -44,15 +44,18 @@ Controls for both player one and two and report as a single HID device.
     - \<OutputPort\>: 1 to 6 ; use 0 to address all ports
     - \<value\>: 0 or 1 ; use the decimal value to set all ports ne shot (ie 252 set the 6 outputs ON)
     - Examples:
-        - 1;1x      ;turn ON output 1 (pin51)
-        - 2;0x      ;turn OFF output 2 (pin52)
+        - 1;1x      ;turn ON output 1.1 (pin51)
+        - 5;0x      ;turn OFF output 2.2 (pin54)
         - 0;252x    ;turn ON outputs 1, 2, 3, 4, 5 and 6 outputs
 
+|     Bit 7     |     Bit 6    |    Bit 5   |  Bit 4     |    Bit 3     |      Bit 2     |  Bit 1   |     Bit 0    |
+| :------------:  | :-------------: | :-------------: |:------------:  | :-------------: | :-------------: |:------------:  | :-------------: |
+|   Output 1.1  |  Output 1.2     |      Output 1.3     |   Output 2.1  |  Output 2.2     |      Output 2.3     |   x  |  x     |      
+| pin 51   |   pin 53    |      pin 55 | pin 52   |   pin 54    |      pin 56 |  x    |   x    |
 
-##Thanks
-k4roshi
-      
-@roysmeding for the wonderful reverse engineering done for Open JVS (https://github.com/TheOnlyJoey/openjvs) and the helpful attitude.
+
+    
+##Thanks @k4roshi and @roysmeding for the wonderful reverse engineering done for Open JVS (https://github.com/TheOnlyJoey/openjvs) and the helpful attitude.
 
 ##License
 The license is GPLv3 for all non commercial purposes.
