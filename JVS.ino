@@ -3,9 +3,9 @@
 
     Created on: 14/apr/2014
         Author: k4roshi
-    Add Analog stick 2020
+    Add 2 ways Analog joystick 2020
         Author: BigPanik
-    Add Output 2022 september
+    Add 6 Outputs 2022 september
         Author: BigPanik
 */
 
@@ -64,7 +64,7 @@ void JVS::outputs(int board, unsigned char outbyte) {
   
   Serial.print("CMD_WRITE_DIGITAL_OUTPUT:");
   Serial.println(outbyte, BIN);
-  char str1[] = { CMD_WRITE_DIGITAL, 0x01, 0x80}; //FC = 11111100 output  51 52 53 54 55 56 x x 
+  char str1[] = { CMD_WRITE_DIGITAL, 0x01, 0x80}; //FC = 11111100 output  51 53 55 52 54 56 x x 
   str1[2]=outbyte;
   this->cmd(board, str1, sizeof str1);
 
