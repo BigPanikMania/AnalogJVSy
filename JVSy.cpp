@@ -4,7 +4,6 @@
 HardwareSerial Uart = HardwareSerial();
 JVS j = JVS(Uart);
 unsigned long lastTime = 0;
-//int outputByte;
 unsigned char oldoutputdata=0;
 
 void setup()
@@ -41,24 +40,10 @@ if(Serial.available()>0){
         if(outputdata==1)oldoutputdata|=1<<outputport+1;
       }
       j.outputs(1,oldoutputdata);
-     // Serial.println(oldoutputdata, BIN);
+     
     }
  }
-    /*if (Serial.available() > 0) {
-          outputByte = Serial.read();
-          
-          if (outputByte == 48)
-          {
-            Serial.println("ALL OFF");
-            j.outputs(1,0x00);
-          }
-          if (outputByte == 49)j.outputs(1,0x80);
-          if (outputByte == 50)j.outputs(1,0x40);
-          if (outputByte == 51)j.outputs(1,0x20);
-          if (outputByte == 52)j.outputs(1,0x10);
-          if (outputByte == 53)j.outputs(1,0x08);
-          if (outputByte == 54)j.outputs(1,0x04);
-          }*/
+   
           
     if(time - lastTime >= 20)
     {

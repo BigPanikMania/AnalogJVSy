@@ -106,109 +106,58 @@ void JVS::switches(int board) {
       Serial.print(incomingByte, HEX);
     }
     switch (counter) {
-      // fourth byte (first three bytes are sync and
+      // first three bytes are sync 
+      case 2:
+          Joystick.button(29, bitRead(incomingByte, 7)); //TEST button
+          break;
       case 3:
-        // p1 b1
-        shift_mode = bitRead(incomingByte, 7);
+        // player 1 byte 1
 
-        if (shift_mode != old_shift) {
-          if (shift_mode == 0 && !pressed_smth)
-            //never pressed anything, wants start
-            key = KEY_1;
-          else
-            pressed_smth = false;
-        }
-        if (shift_mode) {
-          //				Serial.println("shiftmode on");
-          if (bitRead(incomingByte, 1))
-            key = KEY_5;
-          if (bitRead(incomingByte, 2))
-            key = KEY_TAB;
-          if (bitRead(incomingByte, 3))
-            key = KEY_ENTER;
-          if (bitRead(incomingByte, 4))
-            key = KEY_P;
-
-          if (key)
-            pressed_smth = true;
-        } else {
-          Joystick.button(1, bitRead(incomingByte, 1));
-          Joystick.button(2, bitRead(incomingByte, 0));
-          //if bitRead(incomingByte, 2)
-          //						x += 511;
-          Joystick.button(3, bitRead(incomingByte, 2));
-          //if bitRead(incomingByte, 3)
-          //						x -= 512;
-          Joystick.button(4, bitRead(incomingByte, 3));
-          //Joystick.X(x);
-          //if bitRead(incomingByte, 4)
-          //						y += 511;
-          Joystick.button(5, bitRead(incomingByte, 4));
-          //if bitRead(incomingByte, 5)
-          //						y -= 512;
-          Joystick.button(6, bitRead(incomingByte, 5));
-          //Joystick.Y(y);
-          Joystick.button(7, bitRead(incomingByte, 6));
-        }
+          Joystick.button(8, bitRead(incomingByte, 0)); // push 2
+          Joystick.button(7, bitRead(incomingByte, 1)); // push 1
+          Joystick.button(6, bitRead(incomingByte, 2)); //Right
+          Joystick.button(5, bitRead(incomingByte, 3)); //Left
+          Joystick.button(4, bitRead(incomingByte, 4)); //Down
+          Joystick.button(3, bitRead(incomingByte, 5)); // UP
+          Joystick.button(2, bitRead(incomingByte, 6)); //Service
+          Joystick.button(1, bitRead(incomingByte, 7)); //Start button
+ 
         break;
       case 4:
-        // p1 b2
-        if (shift_mode) {
-
-        } else {
-          Joystick.button(9, bitRead(incomingByte, 2));
-          Joystick.button(10, bitRead(incomingByte, 3));
-          Joystick.button(11, bitRead(incomingByte, 4));
-          Joystick.button(12, bitRead(incomingByte, 5));
-          Joystick.button(13, bitRead(incomingByte, 6));
-          Joystick.button(14, bitRead(incomingByte, 7));
-        }
+          Joystick.button(9, bitRead(incomingByte, 7));   //push 3
+          Joystick.button(10, bitRead(incomingByte, 6));  //push 4
+          Joystick.button(11, bitRead(incomingByte, 5));  //push 5
+          Joystick.button(12, bitRead(incomingByte, 4));  //push 6
+          Joystick.button(13, bitRead(incomingByte, 3));  //push 7
+          Joystick.button(14, bitRead(incomingByte, 2));  //push 8
+          
         break;
       case 5:
-        // p2 b1
-        if (shift_mode) {
-          if (bitRead(incomingByte, 7))
-            key = KEY_ESC;
-          if (key)
-            pressed_smth = true;
-        } else {
-          Joystick.button(17, bitRead(incomingByte, 0));
-          Joystick.button(18, bitRead(incomingByte, 1));
-          if bitRead(incomingByte, 2)
-            zA += 511;
-          if bitRead(incomingByte, 3)
-            zA -= 512;
-          Joystick.Zrotate(zA);
-          if bitRead(incomingByte, 4)
-            z += 511;
-          if bitRead(incomingByte, 5)
-            z -= 512;
-          Joystick.Z(z);
-          Joystick.button(23, bitRead(incomingByte, 6));
-          if bitRead(incomingByte, 7)
-            Keyboard.press(KEY_2);
-          else
-            Keyboard.release(KEY_2);
-        }
+        // player 2 byte 1
+          Joystick.button(22, bitRead(incomingByte, 1));
+          Joystick.button(21, bitRead(incomingByte, 0));
+          Joystick.button(20, bitRead(incomingByte, 2));
+          Joystick.button(19, bitRead(incomingByte, 3));
+          Joystick.button(18, bitRead(incomingByte, 4));
+          Joystick.button(17, bitRead(incomingByte, 5));         
+          Joystick.button(16, bitRead(incomingByte, 6));
+          Joystick.button(15, bitRead(incomingByte, 7)); //Start button Player 2
         break;
       case 6:
-        // p2 b2
-        if (shift_mode) {
-
-        } else {
-          Joystick.button(25, bitRead(incomingByte, 2));
-          Joystick.button(26, bitRead(incomingByte, 3));
-          Joystick.button(27, bitRead(incomingByte, 4));
-          Joystick.button(28, bitRead(incomingByte, 5));
-          Joystick.button(29, bitRead(incomingByte, 6));
-          Joystick.button(30, bitRead(incomingByte, 7));
-        }
+        // player 2 byte 2
+          Joystick.button(23, bitRead(incomingByte, 7));
+          Joystick.button(24, bitRead(incomingByte, 6));
+          Joystick.button(25, bitRead(incomingByte, 5));
+          Joystick.button(26, bitRead(incomingByte, 4));
+          Joystick.button(27, bitRead(incomingByte, 3));
+          Joystick.button(28, bitRead(incomingByte, 2));
+        
         break;
       case 8:
         // coins 1 status
         break;
       case 9:
-        // coins1
+        // Insert coin 1
         if (incomingByte > coins1) {
           // added coin
           coin1 = 1;
@@ -217,10 +166,12 @@ void JVS::switches(int board) {
         if (coin1) {
           coin_pressed_at = millis();
           Keyboard.press(KEY_5);
+          Joystick.button(30, 1);
         } else if (coin_pressed_at > 0) {
           if (millis() - coin_pressed_at > 50) {
             coin_pressed_at = 0;
             Keyboard.release(KEY_5);
+            Joystick.button(30, 0);
           }
         }
         break;
@@ -242,9 +193,13 @@ void JVS::switches(int board) {
         break;
       case 17:
         // Analog3
+        z = (unsigned char)incomingByte * 4;
+        Joystick.Z(z);
         break;
       case 19:
         // Analog4
+        zA = (unsigned char)incomingByte * 4;         
+        Joystick.Zrotate(zA);
         break;
     }
     counter++;
