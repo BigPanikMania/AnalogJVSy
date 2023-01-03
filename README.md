@@ -2,10 +2,12 @@
 Open source JVS to PC interface using a Teensy 
 
 ## Description
-AnalogJVSy lets you connect your JVS analog controls (analog joystick and buttons plus 6 outputs) to your PC and use them as controls, for MAME or other purposes. 
+AnalogJVSy lets you connect your JVS analog controls (USB HID joystick with 4 analog axes + 32 buttons) to your PC and use them as controls, for MAME or other purposes. 
+AnalogJVSy also include a serial command line interface allow you to control the first six JVS outputs (usefull to control Lamps, solenoids, etc.).
+
 AnalogJVSy is base on JVSy project from **K4roshi**. Use Arduino IDE 1.8.5.
 
-In its current state it's basically an open source JVS-PAC clone.
+Sucessfully tested on SEGA I/O Board Type 1 (837-13551) and Type 2 (837-13844)
 
 ### Tech description
 AnalogJVSy is an implementation of a JVS I/O host using a teensy 2.0 and an RS-485 to serial interface. The signals read from the other nodes are then converted to standard HID Joystick signals.
@@ -83,8 +85,8 @@ Input switchs and potentiometers are mapped to the corresponding joystick button
 |    Button 26   |  Player 2 - Button 6   | 
 |    Button 27   |  Player 2 - Button 7   | 
 |    Button 28   |  Player 2 - Button 8   | 
-|    Button 29   |  Not used   | 
-|    Button 30   |  Test Button   | 
+|    Button 29   |  Test Button   | 
+|    Button 30 AND Keyboard key 5  |  Coin 1  | 
 |    Button 31   |  Not used   | 
 |    Button 32   |  Not used   | 
 |    Hat Up    |  Not used   | 
@@ -112,7 +114,7 @@ with:
 |   Output 1.1  |  Output 1.2     |      Output 1.3     |   Output 2.1  |  Output 2.2     |      Output 2.3     |   x  |  x     |  
 | pin 51   |   pin 53    |      pin 55 | pin 52   |   pin 54    |      pin 56 |  x    |   x    |
 
-NB: For the moment, only the first six outputs are managed with AnalogJVSy (TODO: outputs \#7 to \#22)
+NB: Only the first six outputs are managed with AnalogJVSy (TODO: outputs \#7 to \#22)
     
 ## Thanks
 
