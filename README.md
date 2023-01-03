@@ -3,7 +3,7 @@ Open source JVS to PC interface using a Teensy
 
 ## Description
 AnalogJVSy lets you connect your JVS analog controls (analog joystick and buttons plus 6 outputs) to your PC and use them as controls, for MAME or other purposes. 
-AnalogJVSy is base on JVSy project from K4roshi
+AnalogJVSy is base on JVSy project from **K4roshi**. Use Arduino IDE 1.8.5.
 
 In its current state it's basically an open source JVS-PAC clone.
 
@@ -37,6 +37,10 @@ USB:
 ![JVSy scheme](https://github.com/BigPanikMania/AnalogJVSy/blob/main/PCB/JVSy-Scheme.JPG "JVSy Scheme")
 
 When built, connect the usb cable that comes from your sega i/o board to the usb port you just soldered, while you connect the teensy to your pc with the standard usb port. If flashed correctly it will be recognized as a joystick hid device.
+
+### PCB
+
+I include a Gerber file to build a 2 layers PCB.
 
 ## Device setup
 
@@ -112,9 +116,21 @@ NB: For the moment, only the first six outputs are managed with AnalogJVSy (TODO
     
 ## Thanks
 
-@k4roshi for JVSy digital sketch 
+This project is based on:
+@k4roshi for JVSy digital sketch (https://github.com/k4roshi/JVSy)
 
 @roysmeding for the wonderful reverse engineering done for Open JVS (https://github.com/TheOnlyJoey/openjvs) and the helpful attitude.
+
+SEGA JVS manual (http://superusr.free.fr/arcade/JVS/JVST_VER3.pdf)
+
+Others similars projects use the same hardware:
+   
+- @k4roshi's initial JVSy work (https://github.com/k4roshi/JVSy)
+- Adapted version of JVSy by gtranche (https://github.com/gtranche/JVSy)
+- Advanced version by FredBedo (https://github.com/Fredobedo/JVS2X)
+   
+
+Many thanks for sharing all these precious sources of information
 
 ## License
 
