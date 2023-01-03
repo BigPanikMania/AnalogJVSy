@@ -119,9 +119,9 @@ NB: Only the first six outputs are managed with AnalogJVSy (TODO: outputs \#7 to
 ## Thanks
 
 This project is based on:
-@k4roshi for JVSy digital sketch (https://github.com/k4roshi/JVSy)
+@k4roshi for JVSy digital sketch (https://github.com/k4roshi/JVSy). Thanks for the the wonderful work done.
 
-@roysmeding for the wonderful reverse engineering done for Open JVS (https://github.com/TheOnlyJoey/openjvs) and the helpful attitude.
+@roysmeding for the reverse engineering done (https://github.com/TheOnlyJoey/openjvs).
 
 SEGA JVS manual (http://superusr.free.fr/arcade/JVS/JVST_VER3.pdf)
 
