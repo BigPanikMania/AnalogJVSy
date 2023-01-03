@@ -32,6 +32,10 @@ USB:
 - GREEN (Data +): SN65176B 6
 - BLACK (GND): Teensy GND
 
+###Scheme
+
+![JVSy scheme](url_de_l'image "JVSy Scheme")
+
 When built, connect the usb cable that comes from your sega i/o board to the usb port you just soldered, while you connect the teensy to your pc with the standard usb port. If flashed correctly it will be recognized as a joystick hid device.
 
 ##Buttons setup
