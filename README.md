@@ -44,10 +44,7 @@ When built, connect the usb cable that comes from your sega i/o board to the usb
 
 I include a Gerber file to build a 2 layers PCB.
 
-![JVSyPSB](https://github.com/BigPanikMania/AnalogJVSy/blob/main/PCB/PCB-AnalogJVSy-2.jpg "JVSyPCB")
-
-![JVSyPSB](https://github.com/BigPanikMania/AnalogJVSy/blob/main/PCB/PCB-AnalogJVSy-1.jpg "JVSyPCB")
-
+![JVSyPSB](https://github.com/BigPanikMania/AnalogJVSy/blob/main/PCB/PCB-3d-AnalogJVSy.png)
 
 ## Device setup
 
